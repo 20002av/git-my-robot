@@ -1,0 +1,26 @@
+<launch>
+  <!-- Khởi động Gazebo với empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+  <!-- Load file URDF vào robot_description parameter -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find mobile_robot)/urdf/agvrobot.urdf'" />
+
+  <!-- Xuất bản TF từ base_link đến base_footprint -->
+  <node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" 
+        args="0 0 0 0 0 0 base_link base_footprint 40" />
+
+  <!-- Spawn model robot vào Gazebo -->
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model agvrobot"
+        output="screen" />
+
+  <!-- Chạy robot_state_publisher để xuất bản TF từ URDF -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- (Tùy chọn) Chạy joint_state_publisher nếu robot có khớp động -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!-- Xuất bản thông điệp giả cho /calibrated -->
+  <node name="fake_joint_calibration" pkg="rostopic" type="rostopic"
+        args="pub /calibrated std_msgs/Bool true" />
+</launch>

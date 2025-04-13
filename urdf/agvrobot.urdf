@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="agvrobot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.002152440678795 1.13126032255986E-05 0.00604402046835019"
+        rpy="0 0 0" />
+      <mass
+        value="14.8703977020626" />
+      <inertia
+        ixx="0.0939644121463141"
+        ixy="-4.10766710536477E-16"
+        ixz="1.95792801349826E-05"
+        iyy="0.317296328959658"
+        iyz="3.28268614486558E-16"
+        izz="0.365654791508982" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="0.0490514635947559 -0.00958883627808618 0.0499639518989416"
+        rpy="0 0 0" />
+      <mass
+        value="0.262394686455578" />
+      <inertia
+        ixx="0.000121479144853231"
+        ixy="-4.51424543104141E-08"
+        ixz="-4.82175100758753E-06"
+        iyy="0.000149994763124515"
+        iyz="-1.69394086425534E-06"
+        izz="0.000156546982374656" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.1273 -0.00047013 0.092"
+      rpy="-0.2101 0.089397 -0.019036" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="0.0116904097022661 -0.000369278649031422 0.0271302951803548"
+        rpy="0 0 0" />
+      <mass
+        value="0.0941041816987777" />
+      <inertia
+        ixx="2.79099143492373E-05"
+        ixy="-1.208440822453E-07"
+        ixz="-3.35438776614448E-07"
+        iyy="4.43519734621322E-05"
+        iyz="2.348031607421E-08"
+        izz="6.94753835429932E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.17611 0.00087065 0.092"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="banh1_link">
+    <inertial>
+      <origin
+        xyz="-1.51471928285796E-05 -9.38964803047226E-05 -4.15707450148566E-05"
+        rpy="0 0 0" />
+      <mass
+        value="4.1716262996994" />
+      <inertia
+        ixx="0.0178679480746258"
+        ixy="5.00366374278824E-09"
+        ixz="6.98886010936195E-07"
+        iyy="0.0326440112060576"
+        iyz="-9.61552164741037E-11"
+        izz="0.0178693243295027" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banh1_joint"
+    type="continuous">
+    <origin
+      xyz="0.2 -0.2525 -0.03"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="banh1_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="banh2_link">
+    <inertial>
+      <origin
+        xyz="4.05849221342958E-05 9.38965040256368E-05 1.76189857834345E-05"
+        rpy="0 0 0" />
+      <mass
+        value="4.1716263031854" />
+      <inertia
+        ixx="0.0178692354925292"
+        ixy="-3.97156964756491E-10"
+        ixz="7.7641962419772E-07"
+        iyy="0.0326440112208869"
+        iyz="4.98857665637852E-09"
+        izz="0.0178680369324417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banh2_joint"
+    type="continuous">
+    <origin
+      xyz="0.2 0.2525 -0.03"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="banh2_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="banh3_link">
+    <inertial>
+      <origin
+        xyz="-4.16516982478798E-05 9.38964959634192E-05 1.49231607441784E-05"
+        rpy="0 0 0" />
+      <mass
+        value="4.17162630199052" />
+      <inertia
+        ixx="0.0178694491338168"
+        ixy="-3.12354106581905E-09"
+        ixz="-5.487400006847E-07"
+        iyy="0.0326440112159965"
+        iyz="-3.90886525304928E-09"
+        izz="0.017867823284253" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banh3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2 0.2525 -0.03"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="banh3_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="banh4_link">
+    <inertial>
+      <origin
+        xyz="1.20943559993314E-05 -9.38966171759037E-05 -4.25594916955187E-05"
+        rpy="0 0 0" />
+      <mass
+        value="4.1716263199783" />
+      <inertia
+        ixx="0.0178677572069347"
+        ixy="4.11908794425219E-09"
+        ixz="-4.34921764944389E-07"
+        iyy="0.0326440112926224"
+        iyz="2.82898806558011E-09"
+        izz="0.0178695153178982" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_robot/stk_link/banh4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banh4_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2 -0.2525 -0.03"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="banh4_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <gazebo>
+    <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+        <!-- Joint Names -->
+        <leftJoint>banh2_joint</leftJoint>
+        <leftJoint>banh3_joint</leftJoint>
+        <rightJoint>banh1_joint</rightJoint>
+        <rightJoint>banh4_joint</rightJoint>
+
+        <!-- Wheel Properties -->
+        <wheelSeparation>0.505</wheelSeparation>
+        <wheelDiameter>0.264</wheelDiameter>
+
+        <!-- Control Topic -->
+
+        <commandTopic>/cmd_vel</commandTopic>
+
+        <!-- Odometry and Frames -->
+        <odometryTopic>/odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <odometrySource>world</odometrySource>
+        <robotBaseFrame>base_link</robotBaseFrame>
+
+        <!-- Publish Options -->
+        <publishOdomTF>true</publishOdomTF>
+        <publishWheelTF>true</publishWheelTF>
+        <publishTf>true</publishTf>
+        <publishWheelJointState>true</publishWheelJointState>
+        <!-- Wheel Dynamics -->
+        <wheelAcceleration>10.0</wheelAcceleration>
+        <wheelTorque>10.0</wheelTorque>
+        <updateRate>100</updateRate>
+
+        <rosDebugLevel>debug</rosDebugLevel>
+    </plugin>
+ </gazebo>
+  
+  <gazebo reference="camera_link">
+   <sensor name="camera_sensor" type="camera">
+     <pose>0 0 0 0 0 0</pose>
+     <visualize>true</visualize>
+     <update_rate>30</update_rate>
+     <camera>
+       <horizontal_fov>1.047</horizontal_fov> <!-- 60 độ -->
+       <image>
+         <width>640</width>
+         <height>480</height>
+         <format>R8G8B8</format>
+       </image>
+       <clip>
+         <near>0.1</near>
+         <far>100</far>
+       </clip>
+     </camera>
+     <plugin name="camera_plugin" filename="libgazebo_ros_camera.so">
+       <ros>
+         <namespace>/camera</namespace>
+         <remapping>image_raw:=image_raw</remapping>
+         <remapping>camera_info:=camera_info</remapping>
+       </ros>
+       <camera_name>camera</camera_name>
+       <frame_name>camera_link</frame_name>
+       <hack_baseline>0.0</hack_baseline>
+     </plugin>
+   </sensor>
+ </gazebo>
+   <gazebo reference="lidar_link">
+   <sensor name="lidar_sensor" type="ray">
+     <pose>0 0 0 0 0 0</pose>
+     <visualize>true</visualize>
+     <update_rate>10</update_rate>
+     <ray>
+       <scan>
+         <horizontal>
+           <samples>360</samples>
+           <resolution>1</resolution>
+           <min_angle>-3.14159</min_angle>
+           <max_angle>3.14159</max_angle>
+         </horizontal>
+         <vertical>
+           <samples>10</samples>
+           <resolution>1</resolution>
+           <min_angle>-0.261799</min_angle>
+           <max_angle>0.261799</max_angle>
+         </vertical>
+       </scan>
+       <range>
+         <min>0.1</min>
+         <max>10.0</max>
+         <resolution>0.01</resolution>
+       </range>
+     </ray>
+     <plugin name="velodyne_plugin" filename="libgazebo_ros_velodyne.so">
+       <topicName>/velodyne_points</topicName>
+       <frameName>lidar_link</frameName>
+     </plugin>
+   </sensor>
+ </gazebo>
+</robot>
